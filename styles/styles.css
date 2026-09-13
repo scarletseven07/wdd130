@@ -10,14 +10,32 @@ header {
     text-align: center;
 }
 
+nav {
+    background-color: #222;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
 main {
     max-width: 840px;
     padding: 20px;
 }
 
+h1 {
+    color: white;
+}
+
 main img {
     width: 150px;
     height: auto;
+    border: 1px solid #333;
+    padding: 5px;
+    box-shadow: 0 0 10px #777;
 }
 
 aside {
