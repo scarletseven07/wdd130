@@ -1,4 +1,4 @@
-css:root {
+Scss:root {
     --primary-color: #006d77;
     --secondary-color: #83c5be;
     --accent1-color: #264653;
@@ -16,12 +16,14 @@ css:root {
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    line-height: 1.5;
 }
 
 header,
 main,
 footer {
     width: 840px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -38,6 +40,35 @@ section,
 article {
     margin: 16px;
     padding: 8px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--accent2-color);
+}
+
+header img {
+    width: 120px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--accent1-color);
 }
 
 .socialmedia a {
@@ -78,35 +109,6 @@ article {
     float: right;
     width: 125px;
     margin-left: 16px;
-}
-
-header {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: center;
-    padding: 10px;
-    background-color: var(--accent2-color);
-}
-
-header img {
-    width: 120px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: var(--accent1-color);
 }
 
 section h2 {
@@ -185,4 +187,190 @@ footer p {
 .socialmedia img {
     width: 40px;
     height: 40px;
+}
+
+/* CONTACT US PAGE */
+
+.company-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    align-items: start;
+}
+
+.company-info h2,
+.map {
+    grid-column: 1 / -1;
+}
+
+.company-info p {
+    margin: 5px 16px;
+}
+
+.map {
+    margin: 16px;
+}
+
+.map iframe {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--accent1-color);
+}
+
+.employee-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.employee-gallery figure {
+    flex: 1;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.employee-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+}
+
+.employee-gallery figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.contact-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--accent2-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 15px 0;
+}
+
+.form-item input,
+.form-item textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent1-color);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.contact-form-section fieldset {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.contact-form-section legend {
+    padding: 0 6px;
+    font-weight: bold;
+}
+
+.contact-form-section fieldset label {
+    display: block;
+    margin: 10px 0;
+}
+
+.contact-form-section input[type="radio"],
+.contact-form-section input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-item {
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox-item input {
+    width: auto;
+}
+
+.contact-form-section button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form-section button:hover {
+    background-color: var(--accent1-color);
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* MOBILE LAYOUT */
+
+@media screen and (max-width: 600px) {
+
+    header,
+    main,
+    footer {
+        width: 100%;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .company-info {
+        grid-template-columns: 1fr;
+    }
+
+    .company-info h2,
+    .map {
+        grid-column: auto;
+    }
+
+    .employee-gallery {
+        flex-direction: column;
+    }
+
+    .employee-gallery img {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+
+    .adventure-gallery {
+        flex-wrap: wrap;
+    }
+
+    .adventure-gallery figure {
+        flex: 1 1 40%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
 }
